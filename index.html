@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+  <link rel="stylesheet" href="./assets/styles.css">
+
+  <!--Fonts-->
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&display=swap" rel="stylesheet">
+
+
+  <title>Frontend Mentor | Weather app</title>
+
+</head>
+<body>
+
+  <main class="main">
+
+    <nav class="navbar navbar-expand-lg p-4">
+
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">
+          <img src="./assets/images/logo.svg" alt="Logo" height="30">
+        </a>
+
+        <div class="wrapper">
+              <a class="nav-link" href="#" role="button">
+                <img src="./assets/images/icon-units.svg" alt="" height="13">
+                Units
+                <img src="./assets/images/icon-dropdown.svg" alt="" height="5">
+              </a>
+          <div class="panel">
+
+            <div class="panel-options">
+              <button class="option-switch">Switch to imperial</button>
+            </div>
+
+            <hr>
+
+            <div class="panel-header">
+              <p>Temperature</p>
+            </div>
+
+            <div class="panel-options">
+              <button class="option">Celsius (°C)</button>
+              <button class="option">Fahrenheit (°F)</button>
+            </div>
+
+            <hr>
+
+            <div class="panel-header">
+              <p>Wind speed</p>
+            </div>
+
+            <div class="panel-options">
+              <button class="option"> km/h</button>
+              <button class="option">mph</button>
+            </div>
+
+            <hr>
+
+            <div class="panel-header">
+              <p>Precipitation</p>
+            </div>
+
+            <div class="panel-options">
+              <button class="option"> Millimeters (mm)</button>
+              <button class="option">Inches (in)</button>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <div class="mode">
+      <a class="nav-link" href="#" role="button">
+        <img src="assets/images/sun-svgrepo-com.svg" alt="" height="12">
+        Switch to Light Mode
+      </a>
+    </div>
+
+    <section id="Search">
+
+      <div class="title">
+        <h1>
+          How's the sky looking today?
+        </h1>
+      </div>
+
+        <form id="searchForm" class="search-form">
+          <div class="input-wrapper">
+            <img src="assets/images/icon-search.svg" alt="">
+            <input type="text" placeholder="Search for a place...">
+          </div>
+
+          <button type="submit" class="search-button">Search</button>
+
+        </form>
+
+    </section>
+
+    <section id="home">
+      <div class="main-container">
+        <div class="left">
+          <div class="info">
+            <div class="city-info">
+              <h2 id="city-name">
+              Berlin, Germany
+              </h2>
+              <p id="date">
+                Wednesday, Feb 11, 2026
+              </p>
+            </div>
+
+            <div class="weather">
+              <img src="assets/images/icon-partly-cloudy.webp" alt="">
+              <h2 class="degrees">
+                20°
+              </h2>
+            </div>
+
+          </div>
+
+          <div class="stats">
+            <div class="card">
+              <p class="stat-title">
+                Feels like
+              </p>
+              <p class="stats-data">
+                18°
+              </p>
+            </div>
+
+            <div class="card">
+              <p class="stat-title">
+                Humidity
+              </p>
+                <p class="stats-data">
+                  46%
+                </p>
+            </div>
+
+            <div class="card">
+              <p class="stat-title">
+                Wind
+              </p>
+              <p class="stats-data">
+                  14km/h
+                </p>
+            </div>
+
+            <div class="card">
+              <p class="stat-title">
+                Precipitation
+              </p>
+              <p class="stats-data">
+                  0mm
+                </p>
+            </div>
+
+          </div>
+
+          <h3 class="daily-title"> Daily forecast</h3>
+
+          <div class="daily">
+            <div class="daily-card">
+              <p>
+                Tue
+              </p>
+              <img src="assets/images/icon-overcast.webp" alt="">
+              <div class="temps">
+                <p>
+                  14°
+                </p>
+                <p>
+                  21°
+                </p>
+              </div>
+            </div>
+            <div class="daily-card">
+              <p>
+                Tue
+              </p>
+              <img src="assets/images/icon-overcast.webp" alt="">
+              <div class="temps">
+                <p>
+                  14°
+                </p>
+                <p>
+                  21°
+                </p>
+              </div>
+            </div>
+
+            <div class="daily-card">
+              <p>
+                Tue
+              </p>
+              <img src="assets/images/icon-overcast.webp" alt="">
+              <div class="temps">
+                <p>
+                  14°
+                </p>
+                <p>
+                  21°
+                </p>
+              </div>
+            </div>
+
+            <div class="daily-card">
+              <p>
+                Tue
+              </p>
+              <img src="assets/images/icon-overcast.webp" alt="">
+              <div class="temps">
+                <p>
+                  14°
+                </p>
+                <p>
+                  21°
+                </p>
+              </div>
+            </div>
+
+            <div class="daily-card">
+              <p>
+                Tue
+              </p>
+              <img src="assets/images/icon-overcast.webp" alt="">
+              <div class="temps">
+                <p>
+                  14°
+                </p>
+                <p>
+                  21°
+                </p>
+              </div>
+            </div>
+
+            <div class="daily-card">
+              <p>
+                Tue
+              </p>
+              <img src="assets/images/icon-overcast.webp" alt="">
+              <div class="temps">
+                <p>
+                  14°
+                </p>
+                <p>
+                  21°
+                </p>
+              </div>
+            </div>
+
+            <div class="daily-card">
+              <p>
+                Tue
+              </p>
+              <img src="assets/images/icon-overcast.webp" alt="">
+              <div class="temps">
+                <p>
+                  14°
+                </p>
+                <p>
+                  21°
+                </p>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <div class="right">
+          <div class="header-hourly">
+            <p>
+              Hourly forecast
+            </p>
+            <div class="hourly-wrapper">
+              <button class="days-toggler">
+                Tuesday
+                <img src="assets/images/icon-dropdown.svg" alt="">
+              </button>
+              <div class="days-panel">
+                <button class="days-option">
+                  Monday
+                </button>
+                <button class="days-option">
+                  Tuesday
+                </button>
+                <button class="days-option">
+                  Wednesday
+                </button>
+                <button class="days-option">
+                  Thursday
+                </button>
+                <button class="days-option">
+                  Friday
+                </button>
+                <button class="days-option">
+                  Saturday
+                </button>
+              </div>
+            </div>
+          </div>
+    
+            <div class="hour">
+              <div class="day-forecast">
+                <img src="assets/images/icon-fog.webp" alt="">
+                <p>
+                  3 PM
+                </p>
+              </div>
+              <div>
+                <p>
+                  20°
+                </p>
+              </div>
+            </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+<footer role="contentinfo">
+  <div class="attribution">
+    Challenge by <a href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</a>. 
+    Coded by <a href="#">Your Name Here</a>.
+  </div>
+</footer>
+<script src="JS/index.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+
+</body>
+
+</html>

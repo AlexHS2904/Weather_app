@@ -1,0 +1,582 @@
+body{
+    background-color: hsl(243, 96%, 9%);
+    color: white;
+    font-family: "Bricolage Grotesque", sans-serif;
+    margin: 0;
+}
+
+/* Navbar and panel */
+
+.mode{
+    display: flex;
+    justify-content: end;
+    padding-right: 2rem;
+    padding-bottom: 1rem;
+}
+
+.wrapper{
+    position: relative;
+}
+
+.nav-link{
+    color: white;
+    background-color: hsl(243, 27%, 20%);
+
+    border-radius: 1rem;
+
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    gap: 7px;
+
+    font-size: 0.85rem;
+    font-weight: 500;
+
+    text-decoration: none;
+    padding: 0.5rem 1.2rem;
+
+    min-width: 7.5rem;
+    height: 2.8rem;
+}
+
+.panel-options{
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+    padding: 0.35rem 0;
+}
+
+.panel {
+    position: absolute;
+    top: calc(100% + 12px);
+    right: 0;
+
+    width: fit-content;
+    padding: 1rem;
+
+    background-color: hsl(243, 27%, 20%);
+    border-radius: 1.25rem;
+
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.35);
+
+    display: none;
+    z-index: 1000;
+}
+
+.panel-header p {
+    font-size: 0.9rem;
+    color: #bbbbbb;
+    margin: 0;
+}
+
+hr{
+    margin: 0;
+    padding: 0.2rem;
+}
+
+.option {
+    display: flex;
+    align-items: center;
+    width: 10rem;
+    text-align: left;
+    background: transparent;
+    color: white;
+    border: none;
+    padding: 0.5rem;
+    padding-left: 0.2rem;
+    border-radius: 0.75rem;
+    cursor: pointer;
+
+    font-size: 1rem;
+    margin: 0;
+}
+
+.option-switch{
+    display: flex;
+    align-items: center;
+    width: 10rem;
+    text-align: left;
+    background: transparent;
+    color: white;
+    border: none;
+    padding: 0.75rem;
+    padding-left: 0.2rem;
+    border-radius: 0.75rem;
+    cursor: pointer;
+
+    font-size: 0.9rem;
+    margin: 0;
+}
+
+.option-switch:hover{
+    background-color: hsl(243, 27%, 20%);
+}
+
+.option:hover{
+    background-color: hsl(243, 27%, 20%);
+}
+
+.option.active {
+    background: hsl(18, 98%, 55%);
+}
+
+.option.active:hover {
+    background: hsl(18, 83%, 37%);
+}
+
+.panel.open{
+    display: block;
+}
+
+/* Home */
+
+h1{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    font-size: 3.2rem;
+    font-weight: 600;
+}
+
+.search-form{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    gap: 1rem;
+}
+
+.input-wrapper {
+    position: relative;
+    display: inline-block;
+}
+
+.input-wrapper img {
+    position: absolute;
+    left: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 16px;
+    pointer-events: none;
+}
+
+.input-wrapper input {
+    padding-left: 40px;
+    height: 2.8rem;
+    border-radius: 10px;
+    background-color: hsl(243, 27%, 20%);
+    border: none;
+    width: 20rem;
+    color: #ffffff;
+}
+
+input::placeholder{
+    color: #ffffff;
+    opacity: 1;
+}
+
+.search-button{
+    background-color: hsl(233, 67%, 56%);
+    border: none;
+    height: 2.8rem;
+    border-radius: 10px;
+    color: #ffffff;
+    width: 6rem;
+}
+
+/* Info*/
+
+#home{
+    display: block;
+}
+
+.main-container{
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+
+    gap: 0.5rem;
+    padding: 2rem;
+}
+
+.left{
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    padding: 2rem;
+}
+
+
+.info{
+    background-image: url("./images/bg-today-large.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    border-radius: 1rem;
+
+    border: 1px solid hsl(228, 37%, 26%);
+    
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10rem;
+    padding: 2rem;
+}
+
+.weather{
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.degrees{
+    font-size: 7rem;
+    font-weight: 100;
+}
+
+.weather img{
+    width: 8rem;
+    height: auto;
+}
+
+/* Stadistics */
+
+.stats{
+    display: grid;
+    grid-template-columns: repeat(4,1fr);
+    gap: 2rem;
+}
+
+.card{
+    color: hsl(250, 6%, 84%);
+    background-color: hsl(243, 27%, 20%);
+    padding: 1rem;
+    border-radius: 1rem;
+    border: 1px solid hsl(228, 37%, 26%);
+
+}
+
+.stat-title{
+    font-size: 1rem;
+}
+
+.stats-data{
+    font-size: 2rem;
+    color: #ffffff;
+    font-weight: 100;
+}
+
+/* Daily */
+
+span{
+    font-size: 1.5rem
+}
+
+.daily{
+    display: grid;
+    grid-template-columns: repeat(7, 1fr);
+    gap: 1rem;
+}
+
+.daily-card{
+    color: hsl(250, 6%, 84%);
+    background-color: hsl(243, 27%, 20%);
+    padding: 1rem;
+    border-radius: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    border: 1px solid hsl(228, 37%, 26%);
+
+}
+
+.daily-card p{
+    margin: 0;
+}
+
+.daily-card img{
+    width: 5rem;
+    height: auto;
+}
+
+.temps{
+    display: flex;
+    justify-content: space-between;
+    gap: 2.5rem;
+}
+
+.daily-title{
+    margin: 0;
+}
+
+
+/* Right */
+
+.right{
+    background: hsl(243, 27%, 20%);
+    border-radius: 20px;
+    padding: 2rem;
+
+    grid-template-rows: repeat(7,1fr);
+    gap: 2rem;
+}
+
+.header-hourly{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 2rem;
+}
+
+.header-hourly p{
+    margin: 0;
+}
+
+/* Days panel */
+
+.days-toggler{
+    font-size: 0.9rem;
+    color: white;
+    background-color: hsl(243, 23%, 30%);
+    border-radius: 0.5rem;
+    border: none;
+    padding: 0.5rem 1rem;
+}
+
+.hourly-wrapper{
+    position: relative;
+}
+
+.days-panel{
+    position: absolute;
+    top: calc(100% + 12px);
+    right: 0;
+
+    padding: 1.25rem;
+
+    background-color: hsl(243, 27%, 20%);
+    border: 1px solid hsl(228, 34%, 66%);
+    border-radius: 1.25rem;
+
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.35);
+
+    display: none;
+    z-index: 1000;
+}
+
+.days-option{
+    display: flex;
+    align-items: center;
+    width: 10rem;
+    text-align: left;
+    background: transparent;
+    color: white;
+    border: none;
+    padding: 0.75rem;
+    padding-left: 0.2rem;
+    border-radius: 0.75rem;
+    cursor: pointer;
+
+    font-size: 0.9rem;
+    margin: 0;
+}
+
+.days-option:hover{
+    background-color: rgba(255,255,255,0.08);
+}
+
+
+.days-panel.open{
+    display: block;
+}
+
+/* Hours */
+
+
+.hour{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    background-color: hsl(243, 23%, 24%);
+    border-radius: 0.5rem;
+    padding: 0.2rem;
+    border: 1px solid hsl(228, 37%, 26%);
+}
+
+.day-forecast{
+    display: flex;
+    align-items: center;
+    gap: 0rem;
+}
+
+.day-forecast img{
+    width: 3.2rem;
+}
+
+.hour p{
+    margin: 0;
+    font-size: 1.1rem;
+    color: white;
+}
+
+
+/* Footer */
+.attribution { font-size: 11px; text-align: center; }
+.attribution a { color: hsl(228, 45%, 44%); }
+
+/* Responsive */
+
+@media (max-width: 575px){
+
+    /* main */
+
+    .main-container{
+        grid-template-columns: 1fr;
+        padding: 0;
+        margin: 0;
+        gap: 1.5rem;
+    }
+
+    h1{
+        font-size: 2.2rem;
+        line-height: 1.2;
+        padding: 0 1rem;
+    }
+
+    /*  nav and mode */
+
+    .mode{
+        justify-content: flex-end;
+        padding-right: 1rem;
+    }
+
+    /*  search  */
+
+    .search-form{
+        flex-direction: column;
+        gap: 1rem;
+        padding: 0 1rem;
+    }
+
+    .input-wrapper{
+        width: 100%;
+    }
+
+    .input-wrapper input{
+        width: 100%;
+    }
+
+    .search-button{
+        width: 100%;
+        border-radius: 14px;
+    }
+
+    /* info card */
+
+    .info{
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        gap: 1.5rem;
+        padding: 1.5rem;
+        background-image: url("./images/bg-today-small.svg");
+        border-radius: 1.5rem;
+    }
+
+    .weather{
+        justify-content: center;
+    }
+
+    .degrees{
+        font-size: 4rem;
+    }
+
+    .weather img{
+        width: 5rem;
+    }
+
+    /* stats */
+
+    .stats{
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    .card{
+        border-radius: 1.25rem;
+    }
+
+    .stats-data{
+        font-size: 1.6rem;
+    }
+
+    /*  daily forecast  */
+
+    .daily{
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+    }
+
+    .daily-card{
+        padding: 1rem;
+    }
+
+    .daily-card img{
+        width: 4rem;
+    }
+
+    .temps{
+        gap: 1.5rem;
+    }
+
+    /* right */
+
+    .right{
+        padding: 1.5rem;
+        margin: 0 1.5rem;
+    }
+
+    .header-hourly{
+        flex-direction: row;
+        align-items: flex-start;
+        gap: 1rem;
+    }
+
+    .hour{
+        padding: 0.5rem 1rem;
+    }
+
+}
+
+
+@media (max-width: 991px){
+
+    .main-container{
+        grid-template-columns: 1fr;
+    }
+
+    .info{
+        flex-direction: column;
+        gap: 2rem;
+        text-align: center;
+    }
+
+    .stats{
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .daily{
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .degrees{
+        font-size: 5rem;
+    }
+
+}
+
