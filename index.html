@@ -12,7 +12,6 @@
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,200..800&display=swap" rel="stylesheet">
 
-
   <title>Frontend Mentor | Weather app</title>
 
 </head>
@@ -46,7 +45,7 @@
             </div>
 
             <div class="panel-options">
-              <button class="option">Celsius (°C)</button>
+              <button class="option active">Celsius (°C)</button>
               <button class="option">Fahrenheit (°F)</button>
             </div>
 
@@ -57,7 +56,7 @@
             </div>
 
             <div class="panel-options">
-              <button class="option"> km/h</button>
+              <button class="option active"> km/h</button>
               <button class="option">mph</button>
             </div>
 
@@ -68,7 +67,7 @@
             </div>
 
             <div class="panel-options">
-              <button class="option"> Millimeters (mm)</button>
+              <button class="option active"> Millimeters (mm)</button>
               <button class="option">Inches (in)</button>
             </div>
 
@@ -95,10 +94,10 @@
         <form id="searchForm" class="search-form">
           <div class="input-wrapper">
             <img src="assets/images/icon-search.svg" alt="">
-            <input type="text" placeholder="Search for a place...">
+            <input type="text" id="cityInput" placeholder="Search for a place...">
           </div>
 
-          <button type="submit" class="search-button">Search</button>
+          <button type="submit" id="search-button">Search</button>
 
         </form>
 
@@ -118,8 +117,8 @@
             </div>
 
             <div class="weather">
-              <img src="assets/images/icon-partly-cloudy.webp" alt="">
-              <h2 class="degrees">
+              <img class="hero-icon" src="assets/images/icon-partly-cloudy.webp" alt="">
+              <h2 class="degrees main-temp">
                 20°
               </h2>
             </div>
@@ -131,7 +130,7 @@
               <p class="stat-title">
                 Feels like
               </p>
-              <p class="stats-data">
+              <p class="stats-data feels-like">
                 18°
               </p>
             </div>
@@ -140,7 +139,7 @@
               <p class="stat-title">
                 Humidity
               </p>
-                <p class="stats-data">
+                <p class="stats-data" id="humidity">
                   46%
                 </p>
             </div>
@@ -149,7 +148,7 @@
               <p class="stat-title">
                 Wind
               </p>
-              <p class="stats-data">
+              <p class="stats-data" id="wind">
                   14km/h
                 </p>
             </div>
@@ -158,7 +157,7 @@
               <p class="stat-title">
                 Precipitation
               </p>
-              <p class="stats-data">
+              <p class="stats-data" id="precipitation">
                   0mm
                 </p>
             </div>
@@ -167,110 +166,8 @@
 
           <h3 class="daily-title"> Daily forecast</h3>
 
-          <div class="daily">
-            <div class="daily-card">
-              <p>
-                Tue
-              </p>
-              <img src="assets/images/icon-overcast.webp" alt="">
-              <div class="temps">
-                <p>
-                  14°
-                </p>
-                <p>
-                  21°
-                </p>
-              </div>
-            </div>
-            <div class="daily-card">
-              <p>
-                Tue
-              </p>
-              <img src="assets/images/icon-overcast.webp" alt="">
-              <div class="temps">
-                <p>
-                  14°
-                </p>
-                <p>
-                  21°
-                </p>
-              </div>
-            </div>
+          <div class="daily" id="daily-container">
 
-            <div class="daily-card">
-              <p>
-                Tue
-              </p>
-              <img src="assets/images/icon-overcast.webp" alt="">
-              <div class="temps">
-                <p>
-                  14°
-                </p>
-                <p>
-                  21°
-                </p>
-              </div>
-            </div>
-
-            <div class="daily-card">
-              <p>
-                Tue
-              </p>
-              <img src="assets/images/icon-overcast.webp" alt="">
-              <div class="temps">
-                <p>
-                  14°
-                </p>
-                <p>
-                  21°
-                </p>
-              </div>
-            </div>
-
-            <div class="daily-card">
-              <p>
-                Tue
-              </p>
-              <img src="assets/images/icon-overcast.webp" alt="">
-              <div class="temps">
-                <p>
-                  14°
-                </p>
-                <p>
-                  21°
-                </p>
-              </div>
-            </div>
-
-            <div class="daily-card">
-              <p>
-                Tue
-              </p>
-              <img src="assets/images/icon-overcast.webp" alt="">
-              <div class="temps">
-                <p>
-                  14°
-                </p>
-                <p>
-                  21°
-                </p>
-              </div>
-            </div>
-
-            <div class="daily-card">
-              <p>
-                Tue
-              </p>
-              <img src="assets/images/icon-overcast.webp" alt="">
-              <div class="temps">
-                <p>
-                  14°
-                </p>
-                <p>
-                  21°
-                </p>
-              </div>
-            </div>
           </div>
 
         </div>
@@ -308,19 +205,10 @@
             </div>
           </div>
     
-            <div class="hour">
-              <div class="day-forecast">
-                <img src="assets/images/icon-fog.webp" alt="">
-                <p>
-                  3 PM
-                </p>
-              </div>
-              <div>
-                <p>
-                  20°
-                </p>
-              </div>
+            <div id="hourly-container">
+
             </div>
+
         </div>
       </div>
     </section>
@@ -333,6 +221,7 @@
     Coded by <a href="#">Your Name Here</a>.
   </div>
 </footer>
+
 <script src="JS/index.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
 
