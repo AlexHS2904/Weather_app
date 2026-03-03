@@ -519,7 +519,15 @@ function getUserLocation() {
             
 
         } catch (error) {
-            console.log("Location error");
+            console.log("Geolocation error:", error);
+
+        if (error.code === error.PERMISSION_DENIED) {
+            alert("Location permission denied.");
+        } else if (error.code === error.POSITION_UNAVAILABLE) {
+            alert("Location unavailable.");
+        } else if (error.code === error.TIMEOUT) {
+            alert("Location request timed out.");
+        }
         }
 
     });
