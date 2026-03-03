@@ -220,7 +220,7 @@ async function fetchWeather(lat,lon) {
         weatherState.currentCode = data.current_weather.weathercode;
         weatherState.feelsLike = data.hourly.apparent_temperature[0];
         weatherState.humidity = data.hourly.relative_humidity_2m[0];
-        weatherState.selectedDay = weatherState.hourly.time[0].split("T")[0];
+        weatherState.selectedDay = data.current_weather.time.split("T")[0];
 
         renderWeather();
         renderDaily();
@@ -316,7 +316,84 @@ function renderDaily() {
         dailyContainer.innerHTML += card;
 
     });
+
+    renderDayDropdown();
+
 }
+
+function renderDayDropdown() {
+
+    const daysPanel = document.querySelector(".days-panel");
+    const daysBtn = document.querySelector(".days-toggler");
+
+    daysPanel.innerHTML = "";
+
+    weatherState.daily.time.forEach(dateString => {
+
+        const date = new Date(dateString);
+
+        const dayName = date.toLocaleDateString("en-US", {
+            weekday: "long"
+        });
+
+        const button = document.createElement("button");
+        button.classList.add("days-option");
+        button.textContent = dayName;
+
+        button.addEventListener("click", () => {
+
+            weatherState.selectedDay = dateString;
+
+            daysBtn.innerHTML = `
+                ${dayName}
+                <img src="assets/images/icon-dropdown.svg" alt="">
+            `;
+
+            renderHourly();
+
+            daysPanel.classList.remove("open");
+        });
+
+        daysPanel.appendChild(button);
+    });
+}
+
+function renderSelectedDayWeather(selectedDate) {
+
+    const index = weatherState.hourly.time.findIndex(time =>
+        time.startsWith(selectedDate)
+    );
+
+    if (index === -1) return;
+
+    let temp = weatherState.hourly.temperature_2m[index];
+    let wind = weatherState.wind;
+    let rain = weatherState.hourly.precipitation[index];
+    let feels = weatherState.hourly.apparent_temperature[index];
+    let humidity = weatherState.hourly.relative_humidity_2m[index];
+
+    if (units.temperature === "fahrenheit") {
+        temp = (temp * 9/5) + 32;
+        feels = (feels * 9/5) + 32;
+    }
+
+    if (units.precipitation === "in") {
+        rain = rain * 0.0393701;
+    }
+
+    document.querySelectorAll(".main-temp")
+        .forEach(el => el.textContent = Math.round(temp) + getTempUnitSymbol());
+
+    document.querySelector(".feels-like").textContent =
+        Math.round(feels) + getTempUnitSymbol();
+
+    document.getElementById("humidity").textContent =
+        humidity + "%";
+
+    document.getElementById("precipitation").textContent =
+        rain.toFixed(1) + (units.precipitation === "mm" ? " mm" : " in");
+}
+
 
 //Hourly Render
 
@@ -437,9 +514,9 @@ function getUserLocation() {
                 weatherState.city = `${geoData.city}, ${geoData.countryName}`;
             }
 
-            if (!weatherState.temperature) {
-                fetchWeather(lat, lon);
-            }
+            
+            fetchWeather(lat, lon);
+            
 
         } catch (error) {
             console.log("Location error");
@@ -449,5 +526,14 @@ function getUserLocation() {
 }
 
 document.addEventListener("DOMContentLoaded", () => {
-    getUserLocation();
+
+    const locateBtn = document.getElementById('locateBtn');
+
+    locateBtn.addEventListener('click', (e) => {
+        e.preventDefault();
+        getUserLocation();
+    });
+
+    fetchCoordinates("Tokyo");
+
 });
